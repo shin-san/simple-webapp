@@ -10,6 +10,6 @@ RUN npm install
 COPY . .
 # Expose port
 EXPOSE 3000
-USER 1000
+# USER 1000
 # Start the app
 CMD [ "npm", "start" ]
