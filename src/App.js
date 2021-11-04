@@ -46,7 +46,7 @@ const App = () => {
   const cicd = ["jenkins", "github-actions"];
   const containers = ["docker", "kubernetes", "openshift"];
   const monitoring = ["prometheus", "grafana", "splunk"];
-  const messaging_platform = ["AMQ", "IBM MQ"];
+  const messaging_platform = ["amq", "ibm mq"];
 
   const hobbies = ["k3s", "raspi4", "💤", "🏃‍♂️", "📖"];
   const learn = ["go", "rust", "react"];

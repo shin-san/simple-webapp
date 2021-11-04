@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
-RUN chown -R node:node /app/node_modules
+RUN chown -R node:node ./node_modules
 
 USER node
 
