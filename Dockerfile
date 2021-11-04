@@ -13,9 +13,10 @@ RUN npm install
 # Copy app files
 COPY . .
 
+RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
 RUN chown -R node:node /app/node_modules
-# Expose port
-EXPOSE 3000
+
 USER node
+
 # Start the app
 CMD [ "npm", "start" ]
