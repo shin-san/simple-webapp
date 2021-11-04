@@ -13,7 +13,7 @@ RUN npm install
 # Copy app files
 COPY . .
 
-RUN chown -R node /app/node_modules
+RUN chown -R node:node /app/node_modules
 # Expose port
 EXPOSE 3000
 USER node
