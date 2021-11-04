@@ -31,5 +31,6 @@ jobs:
       - name: Docker Build and Push
         uses: docker/build-push-action@v2
         with:
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ env.IMAGE_REGISTRY }}/simple-webapp:dev
