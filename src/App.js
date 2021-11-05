@@ -83,6 +83,7 @@ const App = () => {
       </div>
       <div class="json-parent"><p>&#125;</p></div>
       <p>&#125;</p>
+      <div class="footer">by: yours truly</div>
   </>
   )
 }
