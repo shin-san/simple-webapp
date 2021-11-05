@@ -1,10 +1,8 @@
 body {
-    height: 100%;
-    width: 100%;
     background: black;
     color: white;
     font-family: 'Inconsolata', monospace;
-    overflow-x: auto;
+    overflow-x: scroll;
 }
 
 a {
@@ -15,11 +13,16 @@ p {
     margin: 5px;
 }
 
+div.header {
+    position: relative;
+    padding-bottom: 100px;
+    left: 40%;
+}
 div.body {
     border-radius: 1em;
     padding: 1em;
     position: absolute;
-    top: 30%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%);
     font-size: large;
@@ -36,7 +39,7 @@ div.json-child {
 div.footer {
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: -60%;
   padding: 10px;
   width: 100%;
   text-align: center;

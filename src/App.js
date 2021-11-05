@@ -54,6 +54,7 @@ const App = () => {
 
   return(
   <>
+      <div class="header"><p>👋👋</p></div>
       <p>"JC": &#123;</p>
       <div class="json-parent"><p>"socials": &#123;</p></div>
       <div class="json-child">
