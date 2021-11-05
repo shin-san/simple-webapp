@@ -4,7 +4,7 @@ import './index.css'
 const JsonBody1 = (props) => {
   return(
     <>
-      <p>"{props.name}": "<a href={props.link} target="_blank">{props.value}</a>",</p>
+      <p>"{props.name}": "<a href={props.link} rel="noreferrer" target="_blank">{props.value}</a>",</p>
     </>
   )
 }
