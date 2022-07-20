@@ -75,12 +75,12 @@ const App = () => {
 
   const [persons, setPerson] = useState();
 
-  const personUrl = "http://person-service.jc-dev.svc";
+  const personUrl = "https://naythanc.dev/person";
 
   // Function to collect data
   const getPerson = async () => {
     const response = await fetch(
-      personUrl + "/api/v1/person/JC"
+      personUrl + "/api/v1/jc"
     ).then((response) => response.json());
 
     setPerson(response);
@@ -89,8 +89,6 @@ const App = () => {
   useEffect(() => {
     getPerson();
   }, []);
-
-  console.log(persons);
 
   return (
     <>
@@ -147,7 +145,7 @@ const App = () => {
             <div className="json-parent">
               <p>"socials": &#123;</p>
             </div>
-            <div>{socials}</div>
+            <div className="social-container">{socials}</div>
             <div className="json-parent">
               <p>&#125;</p>
             </div>
