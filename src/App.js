@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from "react";
 import './index.css'
 
-const JsonBody1 = (props) => {
-  return(
-    <>
-      "{props.name}": "<a href={props.link} rel="noreferrer" target="_blank">{props.value}</a>"
-    </>
-  )
-}
-
 const JsonBodyObject = (props) => {
   return (
     <>
-      <p>
+      <p key={props.id}>
         "{props.name}": "{props.list.message}"
       </p>
     </>
@@ -54,7 +46,7 @@ function JsonArrayObject2(props) {
 const JsonBodyArray = (props) => {
   return (
     <>
-      <p>
+      <p key={props.id}>
         "{props.name}": ["{JsonArrayObject(props.list)}"]
       </p>
     </>
@@ -64,7 +56,7 @@ const JsonBodyArray = (props) => {
 const JsonBodyArray2 = (props) => {
   return (
     <>
-      <p>
+      <p key={props.id}>
         "{props.name}": ["{JsonArrayObject2(props.list)}"]
       </p>
     </>
@@ -97,12 +89,12 @@ const App = () => {
         let socials = person.socials.map((social) => {
           return (
             <>
-              <p className="json-child">
-                <JsonBody1
-                  name={social.name}
-                  link={social.url}
-                  value={social.social_value}
-                />
+              <p className="json-child" key={social.id}>
+                "{social.name}": "
+                <a href={social.url} rel="noreferrer" target="_blank">
+                  {social.social_value}
+                </a>
+                "
               </p>
             </>
           );
@@ -110,7 +102,7 @@ const App = () => {
         let skills = person.skills.map((skills) => {
           return (
             <>
-              <div className="json-child">
+              <div className="json-child" key={skills.id}>
                 <JsonBodyArray name="language" list={skills.languages} />
                 <JsonBodyArray name="framework" list={skills.framework} />
                 <JsonBodyArray name="cicd" list={skills.cicd} />
@@ -128,7 +120,7 @@ const App = () => {
         let misc = person.misc.map((misc) => {
           return (
             <>
-              <div className="json-child">
+              <div className="json-child" key={misc.id}>
                 <JsonBodyArray name="hobbies" list={misc.hobbies} />
                 <JsonBodyArray2 name="learn" list={misc.learn} />
                 <JsonBodyObject name="uh" list={misc.uh} />
@@ -141,11 +133,11 @@ const App = () => {
             <div className="header">
               <p>👋👋</p>
             </div>
-            <div>"{person.name}": &#123;</div>
+            <div key={person.id}>"{person.name}": &#123;</div>
             <div className="json-parent">
               <p>"socials": &#123;</p>
             </div>
-            <div className="social-container">{socials}</div>
+            <div>{socials}</div>
             <div className="json-parent">
               <p>&#125;</p>
             </div>
