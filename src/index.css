@@ -35,6 +35,14 @@ div.json-child {
     padding-left:60px;
 }
 
+p.json-child {
+    padding-left:60px;
+}
+
+div p:not(:last-of-type)::after {
+  content: ',';
+}
+
 div.footer {
   position: fixed;
   left: 0;
