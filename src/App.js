@@ -4,7 +4,7 @@ import './index.css'
 const JsonBodyObject = (props) => {
   return (
     <>
-      <p key={props.id}>
+      <p>
         "{props.name}": "{props.list.message}"
       </p>
     </>
@@ -46,7 +46,7 @@ function JsonArrayObject2(props) {
 const JsonBodyArray = (props) => {
   return (
     <>
-      <p key={props.id}>
+      <p>
         "{props.name}": ["{JsonArrayObject(props.list)}"]
       </p>
     </>
@@ -56,7 +56,7 @@ const JsonBodyArray = (props) => {
 const JsonBodyArray2 = (props) => {
   return (
     <>
-      <p key={props.id}>
+      <p>
         "{props.name}": ["{JsonArrayObject2(props.list)}"]
       </p>
     </>
@@ -88,20 +88,20 @@ const App = () => {
         persons.map((person) => {
         let socials = person.socials.map((social) => {
           return (
-            <>
-              <p className="json-child" key={social.id}>
+            <React.Fragment key={social.id}>
+              <p className="json-child">
                 "{social.name}": "
                 <a href={social.url} rel="noreferrer" target="_blank">
                   {social.social_value}
                 </a>
                 "
               </p>
-            </>
+            </React.Fragment>
           );
         });
         let skills = person.skills.map((skills) => {
           return (
-            <>
+            <React.Fragment key={skills.id}>
               <div className="json-child" key={skills.id}>
                 <JsonBodyArray name="language" list={skills.languages} />
                 <JsonBodyArray name="framework" list={skills.framework} />
@@ -114,26 +114,26 @@ const App = () => {
                 />
                 <JsonBodyArray name="security" list={skills.security} />
               </div>
-            </>
+            </React.Fragment>
           );
         });
         let misc = person.misc.map((misc) => {
           return (
-            <>
-              <div className="json-child" key={misc.id}>
+            <React.Fragment key={misc.id}>
+              <div className="json-child">
                 <JsonBodyArray name="hobbies" list={misc.hobbies} />
                 <JsonBodyArray2 name="learn" list={misc.learn} />
                 <JsonBodyObject name="uh" list={misc.uh} />
               </div>
-            </>
+            </React.Fragment>
           );
         });
         return (
-          <>
+          <React.Fragment key={person.id}>
             <div className="header">
               <p>👋👋</p>
             </div>
-            <div key={person.id}>"{person.name}": &#123;</div>
+            <div>"{person.name}": &#123;</div>
             <div className="json-parent">
               <p>"socials": &#123;</p>
             </div>
@@ -158,7 +158,7 @@ const App = () => {
               <p>&#125;</p>
             </div>
             <p>&#125;</p>
-          </>
+          </React.Fragment>
         );
       })}
       <div className="footer">by: JC</div>
