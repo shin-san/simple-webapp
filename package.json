@@ -2,7 +2,7 @@
   "name": "simple-webapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/",
+  "homepage": "https://naythanc.dev/",
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@cloudnative/health-connect": "^2.1.0",
